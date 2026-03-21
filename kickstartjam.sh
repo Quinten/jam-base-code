@@ -95,6 +95,8 @@ with open('src/index.html', 'r') as f:
     content = f.read()
 html_title = html_module.escape(title)
 content = content.replace('<title>Jam Base Code</title>', f'<title>{html_title}</title>')
+content = content.replace('background-color: #000000;', f'background-color: {bg};')
+content = content.replace('color: #FFFFFF;', f'color: {fill};')
 with open('src/index.html', 'w') as f:
     f.write(content)
 
@@ -128,6 +130,29 @@ content = content.replace(
     '\nShort but helpful instructions\non how to play this game.\n',
     '\n' + help_text)
 with open('src/states/help.js', 'w') as f:
+    f.write(content)
+
+# src/obj/titletext.js, textbox.js, textbutton.js — replace default fill color
+for path in ('src/obj/titletext.js', 'src/obj/textbox.js', 'src/obj/textbutton.js'):
+    with open(path, 'r') as f:
+        content = f.read()
+    content = content.replace("fill: '#ffffff',", f"fill: '{fill}',", 1)
+    with open(path, 'w') as f:
+        f.write(content)
+
+# src/obj/menubutton.js
+with open('src/obj/menubutton.js', 'r') as f:
+    content = f.read()
+content = content.replace("ctx.strokeStyle = '#ffffff';", f"ctx.strokeStyle = '{stroke}';")
+content = content.replace("ctx.fillStyle = '#ffffff';", f"ctx.fillStyle = '{fill}';")
+with open('src/obj/menubutton.js', 'w') as f:
+    f.write(content)
+
+# src/assets/sprites/textbutton.svg
+with open('src/assets/sprites/textbutton.svg', 'r') as f:
+    content = f.read()
+content = content.replace('.st0{fill:#ffffff;}', f'.st0{{fill:{fill};}}')
+with open('src/assets/sprites/textbutton.svg', 'w') as f:
     f.write(content)
 
 # README.md
