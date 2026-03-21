@@ -3,7 +3,7 @@ import createGrid from './grid.js';
 export default (obj = {}) => {
     let defaults = {
         getRandom: () => Math.random(),
-        nMinos: 13 // number of minos (tridecomino)
+        nMinos: 13 // number of minos (tridecamino)
     };
     Object.assign(defaults, obj);
     Object.assign(obj, defaults);

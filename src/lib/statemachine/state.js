@@ -9,7 +9,7 @@ const eventnames = [
     'step',
     'draw'
 ];
-const volitilenames = [
+const volatileNames = [
     'stop',
     'pointerup',
     'pointerdown',
@@ -30,7 +30,7 @@ export default () => {
                 state.start();
             } else {
                 state.stop();
-                volitilenames.forEach((name) => {
+                volatileNames.forEach((name) => {
                     state.off(name);
                 });
             }
