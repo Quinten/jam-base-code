@@ -38,7 +38,7 @@ export default (obj = {}) => {
         y: 0,
         font: '20px system-ui, sans-serif',
         lineHeight: 2,
-        fill: '#F0F4EF',
+        fill: '#ffffff',
         text: obj.text,
         state: obj.state
     };
