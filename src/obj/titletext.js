@@ -5,7 +5,7 @@ export default (obj = {}) => {
         x: 0,
         y: 0,
         font: '48px system-ui, sans-serif',
-        fill: '#F0F4EF',
+        fill: '#ffffff',
         text: '',
         lineHeight: 2,
         offsetY: 0

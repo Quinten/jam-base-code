@@ -5,7 +5,7 @@ export default (obj = {}) => {
         x: 0,
         y: 0,
         font: '20px system-ui, sans-serif',
-        fill: '#F0F4EF',
+        fill: '#ffffff',
         text: 'Lorem ipsum'
     };
     Object.assign(defaults, obj);
