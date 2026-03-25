@@ -1,5 +1,5 @@
 let parseUri = (sourceUri) => {
-    let uriParts = new RegExp("^(?:([^:/?#.]+):)?(?://)?(([^:/?#]*)(?::(\\d*))?)((/(?:[^?#](?![^?#/]*\\.[^?#/.]+(?:[\\?#]|$)))*/?)?([^?#/]*))?(?:\\?([^#]*))?(?:#(.*))?").exec(sourceUri);
+    let uriParts = new RegExp('^(?:([^:/?#.]+):)?(?://)?(([^:/?#]*)(?::(\\d*))?)((/(?:[^?#](?![^?#/]*\\.[^?#/.]+(?:[\\?#]|$)))*/?)?([^?#/]*))?(?:\\?([^#]*))?(?:#(.*))?').exec(sourceUri);
     return uriParts[3];
 };
 
@@ -7,7 +7,8 @@ export default () => {
     let addressToCheck = '';
     try {
         addressToCheck = window.top.location.href;
-    } catch(e) {
+    } catch (e) {
+        console.warn(e);
         // we are in an iframe
         addressToCheck = document.referrer;
     }
@@ -27,7 +28,7 @@ export default () => {
         return true;
     } else {
         ['click', 'keyup'].forEach(ev => {
-            window.addEventListener(ev, e => {
+            window.addEventListener(ev, () => {
                 window.top.location = atob('aHR0cHM6Ly9zdXBlcm5hcGllLmNvbS8=');
             });
         });

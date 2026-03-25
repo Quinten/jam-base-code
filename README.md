@@ -40,6 +40,14 @@ See https://parceljs.org/ for more details.
 npm run clean
 ```
 
+## Lint
+
+```
+npm run lint
+```
+
+Check the code in `src` and `srcserver.js` for style issues using ESLint.
+
 ## Public test server
 
 During the Jam you can deploy to GitHub pages to share your game with others. Or to test it in different browsers and devices.

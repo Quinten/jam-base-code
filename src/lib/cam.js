@@ -9,7 +9,7 @@ export default (cam = {}) => {
     };
     Object.assign(defaults, cam);
     Object.assign(cam, defaults);
-    let start = e => {
+    let start = () => {
         cam.x = cam.offset.x;
         cam.y = cam.offset.y;
         cam.target.x = cam.x;

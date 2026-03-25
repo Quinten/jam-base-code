@@ -45,7 +45,7 @@ export default (obj = {}) => {
     text(label);
     let labelOffset = 0;
 
-    obj.state.on('step', e => {
+    obj.state.on('step', () => {
         label.text = obj.text;
         label.x = obj.x + obj.w / 2 - label.w / 2;
         label.y = obj.y + obj.h / 2 - label.h / 2 + labelOffset;

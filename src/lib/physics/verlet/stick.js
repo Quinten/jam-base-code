@@ -33,7 +33,7 @@ export default (obj = {}) => {
             b.x += offsetX * 2;
             b.y += offsetY * 2;
         }
-    }
+    };
 
     let physicsElapsed = 0;
     let step = e => {

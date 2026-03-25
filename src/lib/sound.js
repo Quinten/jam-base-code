@@ -210,7 +210,7 @@ let playChunk = (asset, name) => {
         let clone = new Audio(blob);
         let playPromise = clone.play();
         if (playPromise) {
-            playPromise.then(_ => {
+            playPromise.then(() => {
                 clone.currentTime = start;
                 setTimeout(() => {
                     clone.pause();

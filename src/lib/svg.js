@@ -21,7 +21,7 @@ export default (obj) => {
         if (style) {
             let css = style.innerHTML;
             css = css.replace(/[\r\n]/g, '');
-            css = css.replace(
+            css.replace(
                 /\.([a-zA-Z0-9\-_]+)\{fill:(#[0-9a-fA-F]{6});?\}/g,
                 (match, className, color) => {
                     fillMap[className] = color;

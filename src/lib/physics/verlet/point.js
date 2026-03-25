@@ -1,8 +1,6 @@
 export default (obj = {}) => {
     let oldX = 0;
     let oldY = 0;
-    let startX = 0;
-    let startY = 0;
     let defaults = {
         x: 0,
         y: 0,
@@ -43,8 +41,6 @@ export default (obj = {}) => {
 
     oldX = obj.x;
     oldY = obj.y;
-    startX = obj.x;
-    startY = obj.y;
 
     let update = () => {
         if (obj.fixed) {

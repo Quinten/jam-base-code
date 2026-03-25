@@ -27,7 +27,7 @@ export default (obj = {}) => {
         let lines = text.split('\n');
         obj.h = lines.length * fontSize * lineHeight;
         obj.w = 0;
-        lines.forEach((line, i) => {
+        lines.forEach((line) => {
             let w = ctx.measureText(line).width;
             obj.w = Math.max(obj.w, w);
         });

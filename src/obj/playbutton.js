@@ -25,7 +25,7 @@ export default (obj = {}) => {
     };
     Object.assign(defaults, obj);
     Object.assign(obj, defaults);
-    obj.state.on('step', e => {
+    obj.state.on('step', () => {
         let {vw, vh} = obj.state.last('resize');
         obj.x = vw / 2 - obj.w / 2;
         obj.y = vh / 2 - obj.h / 2;
