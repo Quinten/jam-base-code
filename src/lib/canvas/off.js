@@ -13,7 +13,7 @@ export default (obj = {}) => {
     let offCtx = offCanvas.getContext('2d');
     let shim = state();
     shim.draw = e => {
-        let {ctx, cam, cx, cy} = e;
+        let {cam, cx, cy} = e;
         offCanvas.width = obj.w;
         offCanvas.height = obj.h;
         shim.emit('draw', {
@@ -22,7 +22,7 @@ export default (obj = {}) => {
         });
     };
     obj.state.on('draw', e => {
-        let {cam, ctx, cx, cy} = e;
+        let {ctx, cx, cy} = e;
         let {vw, vh} = obj.state.last('resize');
         let repeatX = obj.repetition === 'repeat-x' || obj.repetition === 'repeat';
         let repeatY = obj.repetition === 'repeat-y' || obj.repetition === 'repeat';

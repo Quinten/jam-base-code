@@ -36,7 +36,7 @@ export default (obj = {}) => {
     };
     events(obj.data, ['change']);
     obj.data.syncOn(data);
-    obj.state.once('stop', e => {
+    obj.state.once('stop', () => {
         obj.data.syncOff(data);
         obj.data.off('change');
         obj.data = undefined;

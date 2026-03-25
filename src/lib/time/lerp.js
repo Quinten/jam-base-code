@@ -4,7 +4,7 @@ export default (obj) => {
         let start = obj[prop];
         let elapsed = -delay;
         let step = e => {
-            let {t, dt} = e;
+            let { dt } = e;
             elapsed += dt;
             if (elapsed < 0) {
                 obj.state.once('step', step);

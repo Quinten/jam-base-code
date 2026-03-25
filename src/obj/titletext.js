@@ -13,8 +13,8 @@ export default (obj = {}) => {
     Object.assign(defaults, obj);
     Object.assign(obj, defaults);
     text(obj);
-    obj.state.on('step', e => {
-        let { vw, vh } = obj.state.last('resize');
+    obj.state.on('step', () => {
+        let { vw } = obj.state.last('resize');
         obj.x = vw / 2 - obj.w / 2;
         obj.y = 8 + obj.offsetY;
     });

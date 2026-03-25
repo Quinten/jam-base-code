@@ -41,7 +41,7 @@ export default (src = {}, eTypes = []) => {
 
     src.emit = (type, e = {}) => {
         if (lastEmission[type] && typeof lastEmission[type] === 'object') {
-                Object.assign(lastEmission[type], e);
+            Object.assign(lastEmission[type], e);
         } else {
             lastEmission[type] = e;
         }

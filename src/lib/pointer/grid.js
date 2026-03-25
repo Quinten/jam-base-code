@@ -95,7 +95,7 @@ export default (obj = {}) => {
             obj.pointer.pointing = false;
         }
     });
-    obj.state.on('stop', e => {
+    obj.state.on('stop', () => {
         obj.pointer.down = false;
         if (obj.pointer.pointing) {
             emit('stoppointing', {x: obj.pointer.x, y: obj.pointer.y, value: obj.pointer.value});
